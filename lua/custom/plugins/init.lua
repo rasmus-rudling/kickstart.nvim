@@ -2,4 +2,11 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
+require('lspconfig').protols.setup {}
+
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = { '*.js', '*.ts', '*.jsx', '*.tsx' },
+  command = 'Prettier',
+})
+
 return {}

@@ -124,6 +124,14 @@ vim.opt.breakindent = true
 -- Save undo history
 vim.opt.undofile = true
 
+-- Rasmus custom
+vim.opt.expandtab = true -- expand tab input with spaces characters
+vim.opt.smartindent = true -- syntax aware indentations for newline inserts
+vim.opt.tabstop = 2 -- num of space characters per tab
+vim.opt.shiftwidth = 2 -- spaces per indentation level
+vim.opt.colorcolumn = '91'
+vim.opt.textwidth = 90
+
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -228,7 +236,7 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  -- 'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -617,10 +625,9 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        tsserver = {},
 
         lua_ls = {
-          -- cmd = {...},
+          -- cmd = /{...},
           -- filetypes = { ...},
           -- capabilities = {},
           settings = {
